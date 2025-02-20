@@ -1,0 +1,17 @@
+const express = require('express');
+const app = express();
+
+app.use(express.json())
+app.use(express.urlencoded({extended:true}));
+
+app.get('/',(req,res)=>{
+    res.json({message:"hello worls"});
+});
+
+app.post('/users',(req,res)=>{
+    const user = req.body;
+    console.log(user);
+    res.json({message:"User created",user});
+});
+
+app.listen(3000);
