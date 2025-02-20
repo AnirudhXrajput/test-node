@@ -10,7 +10,6 @@ app.get('/',(req,res)=>{
 
 app.post('/users',(req,res)=>{
     const user = req.body;
-    console.log(user);
     res.json({message:"User created",user});
 });
 
